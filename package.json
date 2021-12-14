@@ -1,0 +1,29 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EMDevelop/adventOfCode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EMDevelop/adventOfCode/issues"
+  },
+  "homepage": "https://github.com/EMDevelop/adventOfCode#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "node-fetch": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.1.3"
+  }
+}
