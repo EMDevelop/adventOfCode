@@ -17,9 +17,15 @@ describe('hello', () => {
     expect(testSonar.loadData().length).to.be.gt(0);
   });
 
-  it('two 0 values should return 0', () => {
+  it('two idendical values', () => {
     var stub = sinon.stub(testSonar, 'loadData');
     stub.returns(['0', '0']);
     expect(testSonar.compareDepths()).to.equal(0);
+  });
+
+  it('an increasing value', () => {
+    var stub = sinon.stub(testSonar, 'loadData');
+    stub.returns(['0', '1']);
+    expect(testSonar.compareDepths()).to.equal(1);
   });
 });

@@ -14,7 +14,7 @@ class Sonar {
 
   compareDepths() {
     const depthsArray = this.loadData();
-    return 0;
+    return depthsArray[1] > depthsArray[0] ? 1 : 0;
   }
 }
 
