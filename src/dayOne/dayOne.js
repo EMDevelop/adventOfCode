@@ -11,6 +11,11 @@ class Sonar {
     const arrayOfDepths = fs.readFileSync(filePath).toString().split('\n');
     return arrayOfDepths;
   }
+
+  compareDepths() {
+    const depthsArray = this.loadData();
+    return 0;
+  }
 }
 
 module.exports = Sonar;
