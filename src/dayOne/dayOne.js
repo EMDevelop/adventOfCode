@@ -1,17 +1,16 @@
+const fs = require('fs'),
+  path = require('path'),
+  filePath = path.join(__dirname, 'data.txt');
+
 class Sonar {
   constructor() {
     this.data = [];
   }
 
-  sweep() {
-    return 'sweep';
+  loadData() {
+    const arrayOfDepths = fs.readFileSync(filePath).toString().split('\n');
+    return arrayOfDepths;
   }
 }
 
-console.log(process.argv);
-
-// fs.readFile('data.txt', 'utf8', function (err, data) {
-//   // Display the file content
-//   console.log('object');
-//   console.log(data);
-// });
+module.exports = Sonar;
