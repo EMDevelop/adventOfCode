@@ -14,7 +14,16 @@ class Sonar {
 
   compareDepths() {
     const depthsArray = this.loadData();
-    return depthsArray[1] > depthsArray[0] ? 1 : 0;
+    // compare values in array on whether they increase
+    // if they do, return the number of increases
+    // if they don't, return 0
+    let numberOfIncreases = 0;
+    for (let i = 0; i < depthsArray.length - 1; i++) {
+      if (depthsArray[i] < depthsArray[i + 1]) {
+        numberOfIncreases++;
+      }
+    }
+    return numberOfIncreases;
   }
 }
 

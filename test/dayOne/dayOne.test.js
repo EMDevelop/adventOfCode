@@ -12,7 +12,7 @@ beforeEach(function () {
   testSonar = new sonar();
 });
 
-describe('hello', () => {
+describe('Sonar Depth Comparison', () => {
   it('parse .txt into array', () => {
     expect(testSonar.loadData().length).to.be.gt(0);
   });
@@ -27,5 +27,11 @@ describe('hello', () => {
     var stub = sinon.stub(testSonar, 'loadData');
     stub.returns(['0', '1']);
     expect(testSonar.compareDepths()).to.equal(1);
+  });
+
+  it('checks for more than one increase', () => {
+    var stub = sinon.stub(testSonar, 'loadData');
+    stub.returns(['0', '1', '2']);
+    expect(testSonar.compareDepths()).to.equal(2);
   });
 });
