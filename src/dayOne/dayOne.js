@@ -12,8 +12,8 @@ class Sonar {
     return arrayOfDepths;
   }
 
-  compareDepths() {
-    const depthsArray = this.loadData();
+  compareDepths(data) {
+    const depthsArray = data ? data : this.loadData();
     let numberOfIncreases = 0;
     for (let i = 0; i < depthsArray.length - 1; i++) {
       if (parseInt(depthsArray[i]) < parseInt(depthsArray[i + 1])) {
@@ -33,8 +33,10 @@ class Sonar {
           parseInt(depthsArray[i + 2])
       );
     }
-    return sumOfThreeValues;
+    return compareDepths(sumOfThreeValues);
   }
 }
 
 module.exports = Sonar;
+
+const sonar = new Sonar();
