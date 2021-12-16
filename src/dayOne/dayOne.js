@@ -33,10 +33,8 @@ class Sonar {
           parseInt(depthsArray[i + 2])
       );
     }
-    return compareDepths(sumOfThreeValues);
+    return this.compareDepths(sumOfThreeValues);
   }
 }
 
 module.exports = Sonar;
-
-const sonar = new Sonar();

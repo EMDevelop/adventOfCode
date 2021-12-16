@@ -51,17 +51,11 @@ describe('Sonar Depth Comparison - Exercise 1', () => {
   });
 });
 
-describe('Sonar Depth Comparison - Exercise 2', () => {
-  it('creates array with 3 values summed', () => {
-    var stub = sinon.stub(testSonar, 'loadData');
-    stub.returns(['1', '1', '1', '2']);
-    expect(testSonar.sumThreeElements()[0]).to.equal(3);
-    expect(testSonar.sumThreeElements()[1]).to.equal(4);
-  });
-
-  // it('should not compare 3 numbers', () => {
-  //   var stub = sinon.stub(testSonar, 'loadData');
-  //   stub.returns(['0', '1', '2']);
-  //   expect(testSonar.compareDepthAverageThree()).to.equal(0);
-  // });
-});
+// describe('Sonar Depth Comparison - Exercise 2', () => {
+//   it('creates array with 3 values summed', () => {
+//     var stub = sinon.stub(testSonar, 'loadData');
+//     stub.returns(['1', '1', '1', '2']);
+//     expect(testSonar.sumThreeElements()[0]).to.equal(3);
+//     expect(testSonar.sumThreeElements()[1]).to.equal(4);
+//   });
+// });
