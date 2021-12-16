@@ -14,16 +14,26 @@ class Sonar {
 
   compareDepths() {
     const depthsArray = this.loadData();
-    // compare values in array on whether they increase
-    // if they do, return the number of increases
-    // if they don't, return 0
     let numberOfIncreases = 0;
     for (let i = 0; i < depthsArray.length - 1; i++) {
-      if (depthsArray[i] < depthsArray[i + 1]) {
+      if (parseInt(depthsArray[i]) < parseInt(depthsArray[i + 1])) {
         numberOfIncreases++;
       }
     }
     return numberOfIncreases;
+  }
+
+  sumThreeElements() {
+    const depthsArray = this.loadData();
+    let sumOfThreeValues = [];
+    for (let i = 0; i < depthsArray.length - 2; i++) {
+      sumOfThreeValues.push(
+        parseInt(depthsArray[i]) +
+          parseInt(depthsArray[i + 1]) +
+          parseInt(depthsArray[i + 2])
+      );
+    }
+    return sumOfThreeValues;
   }
 }
 

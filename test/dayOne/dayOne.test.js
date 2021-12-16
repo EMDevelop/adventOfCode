@@ -4,15 +4,13 @@ const expect = require('chai').expect;
 const sonar = require('../../src/dayOne/dayOne');
 const sinon = require('sinon');
 
-console.log(sonar);
-
 chai.use(chaiHTTP);
 
 beforeEach(function () {
   testSonar = new sonar();
 });
 
-describe('Sonar Depth Comparison', () => {
+describe('Sonar Depth Comparison - Exercise 1', () => {
   it('parse .txt into array', () => {
     expect(testSonar.loadData().length).to.be.gt(0);
   });
@@ -34,4 +32,36 @@ describe('Sonar Depth Comparison', () => {
     stub.returns(['0', '1', '2']);
     expect(testSonar.compareDepths()).to.equal(2);
   });
+
+  it('checks their dummy data', () => {
+    var stub = sinon.stub(testSonar, 'loadData');
+    stub.returns([
+      '199',
+      '200',
+      '208',
+      '210',
+      '200',
+      '207',
+      '240',
+      '269',
+      '260',
+      '263',
+    ]);
+    expect(testSonar.compareDepths()).to.equal(7);
+  });
+});
+
+describe('Sonar Depth Comparison - Exercise 2', () => {
+  it('creates array with 3 values summed', () => {
+    var stub = sinon.stub(testSonar, 'loadData');
+    stub.returns(['1', '1', '1', '2']);
+    expect(testSonar.sumThreeElements()[0]).to.equal(3);
+    expect(testSonar.sumThreeElements()[1]).to.equal(4);
+  });
+
+  // it('should not compare 3 numbers', () => {
+  //   var stub = sinon.stub(testSonar, 'loadData');
+  //   stub.returns(['0', '1', '2']);
+  //   expect(testSonar.compareDepthAverageThree()).to.equal(0);
+  // });
 });
